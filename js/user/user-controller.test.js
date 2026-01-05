@@ -53,3 +53,13 @@ test("findByEmail() returns the user when email exists", () => {
   // El resultado coincidir con el usuario creado
   expect(result).toBe(user);
 });
+
+test("findByEmail() returns undefined when email does not exist", () => {
+  const userController = new UserController();
+  const user = new User(2, "Digsy", "digsy@gmail.com");
+  // Agrega el usuario creado
+  userController.add(user);
+  // Llama la funcion findByEmail y le da un email inexistente como argumento
+  const result = userController.findByEmail("digsyborboa@gmail.com");
+  expect(result).toBeUndefined();
+});
