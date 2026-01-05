@@ -63,3 +63,28 @@ test("findByEmail() returns undefined when email does not exist", () => {
   const result = userController.findByEmail("digsyborboa@gmail.com");
   expect(result).toBeUndefined();
 });
+
+// 2 pruebas unitarias para la función findById()
+
+test("findById() returns the user when the id exists", () => {
+  const userController = new UserController();
+  // Se crea un usuario con un id específico
+  const user = new User(14, "Coco", "coco@gmail.com");
+  // Se agrega el usuario
+  userController.add(user);
+  // Se busca el usuario usando su id
+  const result = userController.findById(14);
+  // Se espera que el resultado sea el mismo usuario agregado
+  expect(result).toBe(user);
+});
+
+test("findById() returnts undefined when the id doesn't exist", () => {
+  const userController = new UserController();
+  // Se crea y agrega un usuario al controlador
+  const user = new User(44, "Aki", "aki@gmail.com");
+  userController.add(user);
+  // Se prueba buscando un id que no existe en la lista
+  const result = userController.findById(444);
+  // Se espera que el resultado sea undefined porque no existe usuario con dicho id
+  expect(result).toBeUndefined();
+});
