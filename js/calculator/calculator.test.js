@@ -27,3 +27,13 @@ test("divides 80 / 2 to equal 40", () => {
 });
 
 // 2 pruebas unitarias para la función multiply().
+
+test("multiplies 10 * 5 to equal 50", () => {
+  expect(calculator.multiply(4, 5)).toBe(20);
+});
+
+test("multiplies -3 * 6 to equal -18", () => {
+  expect(calculator.multiply(-3, 6)).toBe(-18);
+});
+
+//
