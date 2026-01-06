@@ -36,4 +36,14 @@ test("multiplies -3 * 6 to equal -18", () => {
   expect(calculator.multiply(-3, 6)).toBe(-18);
 });
 
-//
+// Tarea 3. Usar el Desarrollo Orientado a Pruebas para desarrollar la función dividir en el script ./js/calculator/calculator.js.
+
+// Escribir una prueba unitaria para verificar la función divide() pasando 0 como segundo argumento.
+
+/* test("Divides a number by 0", () => {
+  expect(calculator.divide(10, 0)).toBe(Infinity);
+}); */
+
+test("Divides a number by 0", () => {
+  expect(calculator.divide(10, 0)).toBe(0);
+});
